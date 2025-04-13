@@ -32,6 +32,17 @@ else:
 app.mount("/", StaticFiles(directory=frontend_path, html=True), name="frontend")
 
 
+from fastapi.responses import FileResponse
+
+# Serve React routes (e.g., /signup, /dashboard) with index.html
+@app.get("/{full_path:path}")
+async def serve_react_app(full_path: str):
+    index_path = frontend_path / "index.html"
+    if index_path.exists():
+        return FileResponse(index_path)
+    return {"detail": "Not Found"}
+
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["http://localhost:3000"],
