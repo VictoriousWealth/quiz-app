@@ -11,12 +11,15 @@ from routes.upload_db import router as upload_db_router
 from fastapi import Depends
 from auth.routes import auth_router
 from routes.users import router as me_router
+from fastapi.staticfiles import StaticFiles
+from pathlib import Path
 
 load_dotenv()
 
 Base.metadata.create_all(bind=engine)  # Temporary until you use Alembic
 
 app = FastAPI()
+app.mount("/", StaticFiles(directory=Path("../frontend/build"), html=True), name="frontend")
 
 
 app.add_middleware(
@@ -26,6 +29,7 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
 
 app.include_router(auth_router)
 app.include_router(answer_router, prefix="/answers", tags=["Answers"])
