@@ -58,7 +58,7 @@ class Question(Base):
     __tablename__ = "questions"
 
     id = Column(UUID(as_uuid=True), primary_key=True, default=generate_uuid)
-    quiz_id = Column(String, ForeignKey("quizzes.id"))
+    quiz_id = Column(UUID(as_uuid=True), ForeignKey("quizzes.id"))
     text = Column(Text)
     options = Column(JSON)  # Expects list of strings
     correct_answer = Column(String)

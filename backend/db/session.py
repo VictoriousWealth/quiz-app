@@ -9,13 +9,13 @@ load_dotenv()  # Load from .env file
 
 # DATABASE_URL = os.getenv("DATABASE_URL")
 import os
-from sqlalchemy.engine import URL
 
 DATABASE_URL = os.environ.get("DATABASE_URL")
-if DATABASE_URL and DATABASE_URL.startswith("postgres://"):
-    DATABASE_URL = DATABASE_URL.replace("postgres://", "postgresql://", 1)
 
-SQLALCHEMY_DATABASE_URL = DATABASE_URL
+if DATABASE_URL is None:
+    raise ValueError("DATABASE_URL environment variable is not set.")
+engine = create_engine(DATABASE_URL, echo=True)
+
 
 engine = create_engine(DATABASE_URL, echo=True)
 
