@@ -19,7 +19,17 @@ load_dotenv()
 Base.metadata.create_all(bind=engine)  # Temporary until you use Alembic
 
 app = FastAPI()
-app.mount("/", StaticFiles(directory=Path("../frontend/build"), html=True), name="frontend")
+from pathlib import Path
+from fastapi.staticfiles import StaticFiles
+
+# Absolute path to the frontend build directory
+frontend_path = Path(__file__).resolve().parent.parent / "frontend" / "build"
+if not frontend_path.exists():
+    print(f"❌ Could not find frontend build folder at: {frontend_path}")
+else:
+    print(f"✅ Found frontend build folder at: {frontend_path}")
+
+app.mount("/", StaticFiles(directory=frontend_path, html=True), name="frontend")
 
 
 app.add_middleware(
