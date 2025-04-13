@@ -40,7 +40,7 @@ proto-plus==1.26.1
 protobuf==5.29.4
 psycopg2-binary==2.9.10
 pyasn1==0.4.8
-pyasn1_modules==0.4.2
+pyasn1-modules==0.2.8
 pycparser==2.22
 pydantic==2.11.3
 pydantic_core==2.33.1
@@ -61,7 +61,7 @@ starlette==0.46.1
 tomli==2.2.1
 tqdm==4.67.1
 typing-inspection==0.4.0
-typing_extensions==4.13.1
+typing_extensions==4.13.2
 uritemplate==4.1.1
 urllib3==2.3.0
 uvicorn==0.34.0
