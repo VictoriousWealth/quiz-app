@@ -7,8 +7,15 @@ from dotenv import load_dotenv
 
 load_dotenv()  # Load from .env file
 
-# Example PostgreSQL URL: postgresql://user:password@localhost/dbname
-DATABASE_URL = os.getenv("DATABASE_URL")
+# DATABASE_URL = os.getenv("DATABASE_URL")
+import os
+from sqlalchemy.engine import URL
+
+DATABASE_URL = os.environ.get("DATABASE_URL")
+if DATABASE_URL and DATABASE_URL.startswith("postgres://"):
+    DATABASE_URL = DATABASE_URL.replace("postgres://", "postgresql://", 1)
+
+SQLALCHEMY_DATABASE_URL = DATABASE_URL
 
 engine = create_engine(DATABASE_URL, echo=True)
 
