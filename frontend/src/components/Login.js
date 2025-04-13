@@ -13,8 +13,9 @@ function Login({ darkMode }) {
     const formData = new URLSearchParams();
     formData.append('username', email); 
     formData.append('password', password);
-  
-    const response = await fetch("http://localhost:8000/auth/login", {
+
+    const API_BASE = process.env.REACT_APP_API_URL || "";
+    const response = await fetch(`${API_BASE}/auth/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/x-www-form-urlencoded"
