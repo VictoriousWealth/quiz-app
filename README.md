@@ -86,8 +86,13 @@ Now visit `http://localhost:3000` to start using the app!
 
 ---
 
-## 🔍 Deployment
-Deployment instructions for platforms like **Render**, **Vercel**, or **Heroku** will be provided soon. This MVP is almost ready for production.
+## 🌍 Live App
+
+You can try the frontend live on Heroku here:
+👉 https://quiz-frontend-nick-b973ee3e10ba.herokuapp.com
+
+View the auto-generated Swagger UI at:
+👉 https://quiz-backend-nick-4b3aa7c613b0.herokuapp.com/docs
 
 ---
 
