@@ -96,6 +96,23 @@ View the auto-generated Swagger UI at:
 
 ---
 
+## Responsive video demo
+
+[![Watch the 22-second Quizify AI demo](./docs/videos/desktop.jpg)](./docs/videos/desktop.mp4)
+
+Watch: [Desktop (16:9)](./docs/videos/desktop.mp4) · [Tablet (4:3)](./docs/videos/tablet.mp4) · [Phone (9:16)](./docs/videos/mobile.mp4)
+
+Upload study material → answer quiz questions → review answers and explanations. Each edition shows the frontend captured at its corresponding responsive layout. The app currently displays **QuizGen** in its navigation; **Quizify AI** is its portfolio name.
+
+These edited demos use fictional biology questions and local fixture responses. They illustrate the frontend workflow, not live AI generation or a production backend session. GitHub README video versions are selected manually.
+
+<details>
+<summary>Media credits</summary>
+
+[Music and sound-effect credits](./docs/videos/credits.txt).
+
+</details>
+
 ## 📸 Demo & Screenshots
 44 detailed screenshots have been uploaded to showcase user flow, dark/light mode, quiz results, and dashboard views.
 Here are some visual highlights of the app in both light and dark modes:
